@@ -1,58 +1,83 @@
 import React, { useState } from 'react';
-import { MdOutlineSend } from 'react-icons/md';
 import { useForm } from '@formspree/react';
 import connect from './images/connect.png';
 
 const Connect = () => {
   const [state, handleSubmit] = useForm('xrgvbbed');
   const [ismodal, modalon] = useState(false);
-  const handleModal = () => {
-    modalon(!ismodal);
-  };
+  const handleModal = () => modalon(!ismodal);
+
   if (state.succeeded) {
     return (
-      <div className={ismodal ? 'thanks' : 'close-t'}>
-        Thank you for you message, we&apos;ll get back to you shortly &#129303;
-        <button type="button" onClick={handleModal}>Close</button>
+      <div className="thanks">
+        <p>Message sent — I&apos;ll get back to you shortly. 🙌</p>
+        <button
+          type="button"
+          onClick={handleModal}
+          style={{
+            marginTop: '10px', background: 'none', border: '1px solid rgba(45,212,160,0.4)', borderRadius: '100px', padding: '6px 20px', cursor: 'pointer', color: 'var(--success)',
+          }}
+        >
+          Close
+        </button>
       </div>
     );
   }
+
   return (
     <section id="connect">
-      <h1 className="project-title">
-        <MdOutlineSend />
-        <b>Connect with me</b>
-      </h1>
+      <div className="section-label">Contact</div>
+      <h2 className="section-title">Let&apos;s build something.</h2>
+
       <div className="connect-con" data-aos="fade-up">
         <div className="down">
           <div className="p-con">
-            <h1 className="connect-title">
-              <MdOutlineSend />
-              <b>Get in touch</b>
-            </h1>
             <p>
-              If you like what you see and have a project you need coded
-              Or if you just want to chat, please don&apos;t hesitate to get in touch with me.
+              Whether you have a fintech product to build, a codebase that needs
+              serious care, or just want to explore what&apos;s possible — I&apos;d love to hear
+              about it.
             </p>
           </div>
-          <button onClick={handleModal} className="contact-btn" type="button">Say Hello</button>
+          <button onClick={handleModal} className="contact-btn" type="button">
+            Send a message →
+          </button>
         </div>
         <div>
-          <img className="wrap-img1" src={connect} alt="Connect with me" />
+          <img className="wrap-img1" src={connect} alt="Connect" />
         </div>
       </div>
+
       <div className={ismodal ? 'more-projects-on' : 'more-projects'}>
-        <p>
-          If you like what you see and have a project you need coded
-          Or if you just want to chat, please don&apos;t hesitate to get in touch with me.
-        </p>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <input type="text" required id="name" name="name" placeholder="Full Name" />
-          <input type="email" id="email" name="email" required placeholder="Email address" />
-          <textarea required id="message" name="message" rows="3" placeholder="message" />
-          <div><button className="connect-btn" type="submit" disabled={state.submitting}>Send</button></div>
-        </form>
-        <button className="connect-btn red" onClick={handleModal} type="button">Close</button>
+        <div style={{
+          background: 'var(--bg-card)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', padding: '36px', width: '100%', maxWidth: '480px',
+        }}
+        >
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 800, marginBottom: '8px',
+          }}
+          >
+            Get in touch
+          </h3>
+          <p style={{
+            fontSize: '14px', color: 'var(--muted)', marginBottom: '24px', lineHeight: '1.65',
+          }}
+          >
+            Fill out the form and I&apos;ll reply within 24 hours.
+          </p>
+          <form onSubmit={(e) => handleSubmit(e)}>
+            <input type="text" required id="name" name="name" placeholder="Full Name" />
+            <input type="email" id="email" name="email" required placeholder="Email address" />
+            <textarea required id="message" name="message" rows="4" placeholder="Tell me about your project..." />
+            <div style={{ display: 'flex', gap: '12px', marginTop: '4px' }}>
+              <button className="connect-btn" type="submit" disabled={state.submitting} style={{ flex: 1, marginTop: 0 }}>
+                {state.submitting ? 'Sending...' : 'Send message'}
+              </button>
+              <button className="connect-btn red" onClick={handleModal} type="button" style={{ marginTop: 0 }}>
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );
