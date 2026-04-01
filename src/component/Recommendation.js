@@ -75,6 +75,8 @@ const Recommendation = () => {
         <MdOutlineSend />
         <b>Testimonials</b>
       </h1>
+      <h2 className="section-title">What people say about me.</h2>
+
       <Swiper
         modules={[Pagination, Mousewheel, Autoplay]}
         spaceBetween={30}

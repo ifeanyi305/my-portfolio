@@ -1,93 +1,79 @@
-import { MdOutlineSend } from 'react-icons/md';
 import React from 'react';
 import Myproject from './Myproject';
-import artmint from './images/artmint.png';
-import nmu from './images/nmu voting.png';
 import MonieWave from './images/MonieWave.png';
 import easyLaunch from './images/easyLaunch.png';
-import oddHaven from './images/oddshaven.png';
 import Fllow from './images/fllow.png';
+import Projector from './images/projector.png';
+import Swiift from './images/swiift.png';
 
 const project = [
   {
-    name: 'Fllow',
+    name: 'Swiift — Crypto-Fiat Fintech App',
+    id: 5,
+    img: Swiift,
+    iconLabel: 'Fintech · Mobile',
+    lang1: 'React Native',
+    lang2: 'iOS & Android',
+    lang4: 'Fintech',
+    desc: 'Swiift is a cross-platform mobile fintech app that lets users deposit crypto and convert it to fiat (USD/NGN). Features include bill payments, virtual cards for international payments, USD/NGN vault savings, and intelligent automation tools: Rapid Ramp (auto-credits bank on crypto deposit), Rate Alert (notifies when rates hit targets), and Auto-Convert (rules-based automatic conversion). Built for iOS and Android — Android APK available, Play Store/App Store launch pending.',
+    liveDemo: 'https://drive.google.com/drive/folders/1wMOcA5dvQ4Tfs4kSTrY__HphpZzAAGYY?usp=sharing',
+    github: null,
+  },
+  {
+    name: 'Projector — Worship Presentation Desktop App',
+    id: 6,
+    img: Projector,
+    iconLabel: 'Desktop App',
+    lang1: 'Desktop App',
+    lang2: 'Confidential',
+    lang4: 'EasyWorship Replica',
+    desc: 'Projector is a full-featured desktop application for church worship services — a feature-complete replica of EasyWorship. Worship teams use it to project Bible verses, song lyrics, announcements, and media with professional-grade presenter controls, real-time stage display output, and a fast-switching UI optimised for live services. The codebase is proprietary and under NDA; Demo video is available below.',
+    liveDemo: 'https://drive.google.com/drive/folders/1kZonulyB2n1OqK199clmWANF3217pwo8?usp=sharing',
+    github: null,
+  },
+  {
+    name: 'Fllow — Creator Commerce Platform',
     id: 1,
     img: Fllow,
-    lang1: 'Next JS',
-    lang2: 'Javascript',
-    lang3: 'Web3',
+    lang1: 'Next.js',
+    lang2: 'JavaScript',
     lang4: 'Convex',
-    desc: 'Fllow is an e-commerce and link in bio platform designed for creators to sell their digital products, online courses, memberships, and create email lists. With Fllow, no coding is required, making it super easy to use for beginners. You really dont need any coding experience to get started. We think even a caveman could do it.',
-    liveDemo: 'https://www.fllow.store/',
+    desc: 'Fllow is an e-commerce and link-in-bio platform built for creators to sell digital products, online courses, and memberships — with zero coding required. Think Gumroad meets Linktree, purpose-built for the creator economy.',
+    liveDemo: null,
     github: 'https://github.com/V-Blaze/Fllow-FE',
   },
   {
-    name: 'ArtMint',
-    id: 2,
-    img: artmint,
-    lang1: 'React',
-    lang2: 'Redux',
-    lang4: 'CSS',
-    desc: 'ArtMint is an Art store, where unique digital art and collectibles await.',
-    liveDemo: 'https://www.xartmint.com/',
-  },
-  {
-    name: 'MonieWave',
+    name: 'MonieWave — Cross-Border Remittance',
     id: 3,
     img: MonieWave,
-    lang1: 'Ruby on rails',
+    lang1: 'Ruby on Rails',
     lang2: 'React',
     lang4: 'Redux',
-    desc: 'Experience free hassle-free cross-border money transfers with MonieWave. Our innovative fintech platform is dedicated to making it simple for residents of Europe to send money swiftly and securely to Nigeria, and say goodbye to complications and hidden fees, MonieWave is your trustworthy partner for seamless remittances.',
-    liveDemo: 'https://ratehive.netlify.app/',
+    desc: 'MonieWave enables residents of Europe to send money swiftly and securely to Nigeria — no hidden fees, no complications. Achieved 75% user retention and named one of the "Top Fintech Web Apps of the Year" by a major tech publication.',
+    liveDemo: null,
     github: 'https://github.com/ifeanyi305/Ratehive_Frontend',
   },
   {
-    name: 'Easy Launch',
+    name: 'Easy Launch — Web3 Crypto Platform',
     id: 4,
     img: easyLaunch,
-    lang1: 'Web3 Blockchain',
+    lang1: 'Web3 / Blockchain',
     lang2: 'React',
-    lang4: 'Redux',
-    desc: 'Easy Launch is a cutting-edge web3 blockchain platform that provides an all-in-one solution for users seeking to launch their own cryptocurrency. With a robust and secure architecture, Easy Launch enables users to create and manage their own digital assets and smart contracts, as well as conduct seamless and secure transactions on the blockchain.',
-    liveDemo: 'https://easylaunch.onrender.com/',
+    lang4: 'Firebase',
+    desc: 'Easy Launch is an all-in-one Web3 platform for creating, managing, and deploying custom cryptocurrencies and smart contracts. Drove a 50% increase in DAUs and 40% growth in transaction volume in year one. Awarded "Innovator of the Year."',
+    liveDemo: null,
     github: 'https://github.com/ifeanyi305/initial_coin_offering',
-  },
-  {
-    name: 'OddsHaven',
-    id: 5,
-    img: oddHaven,
-    lang1: 'React',
-    lang2: 'Redux',
-    lang4: 'CSS',
-    desc: 'OddsHaven is a community-based crypto casino that offers its players the best online casino experience possible! At OddsHaven.GG, we are convinced that blockchain will change the online crypto-gambling industry forever! Jump in and check it out for yourself! Have fun and earn crypto Built with',
-    liveDemo: 'https://oddshaven.netlify.app/',
-    github: 'https://github.com/ifeanyi305/beacon',
-  },
-  {
-    name: 'NMU online voting',
-    id: 6,
-    img: nmu,
-    lang1: 'React',
-    lang2: 'Redux',
-    lang4: 'CSS',
-    desc: 'Nmu online voting allows vote their desired candidate to be awarded at the NMU Pageantry and Awards Night. Each vote cost ₦100 only, and voters are allowed to vote multiple times in any volume',
-    liveDemo: 'https://nmupaa.org/',
   },
 ];
 
 const Project = () => (
   <div id="project">
-    <h1 className="project-title">
-      <MdOutlineSend />
-      <b>My Projects</b>
-    </h1>
+    <div className="section-label">Featured Work</div>
+    <h2 className="section-title">Featured Projects.</h2>
     <div className="grid-container">
-      {
-          project.map((allProject) => (
-            <Myproject allProject={allProject} key={allProject.id} />
-          ))
-        }
+      {project.map((allProject) => (
+        <Myproject allProject={allProject} key={allProject.id} />
+      ))}
     </div>
   </div>
 );

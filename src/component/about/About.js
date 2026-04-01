@@ -1,88 +1,77 @@
 /*eslint-disable*/
 import React, { useState } from 'react';
-import { MdOutlineSend } from 'react-icons/md';
-import myself from '../images/myself.jpg';
-import ifeanyi from '../images/IMG_3115 copy.PNG';
 
 const About = () => {
   const [aboutdesc, setaboutdesc] = useState(false);
+  const aboutAccordion = () => setaboutdesc(!aboutdesc);
 
-  const aboutAccordion = () => {
-    setaboutdesc(!aboutdesc);
-  };
+  const skillGroups = [
+    { label: 'Frontend', items: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Vue.js', 'Redux', 'Tailwind CSS', 'HTML5', 'CSS3'] },
+    { label: 'Mobile', items: ['React Native', 'Expo', 'iOS', 'Android'] },
+    { label: 'Backend', items: ['Node.js', 'RESTful APIs'] },
+    { label: 'Databases', items: ['PostgreSQL', 'MongoDB', 'MySQL', 'Firebase'] },
+    // { label: 'Web3', items: ['Ethereum', 'Smart Contracts', 'Web3.js'] },
+    { label: 'Tools', items: ['Git', 'GitHub', 'GitFlow', 'Docker', 'Postman', 'Webpack', 'Netlify'] },
+    { label: 'AI & Automation', items: ['AI-assisted development', 'prompt engineering', 'workflow automation', 'integrating AI APIs into applications'] },
+  ];
+
   return (
     <div data-aos="fade-up" id="about">
-      <h1>
-        <MdOutlineSend />
-        <b>About Me</b>
-      </h1>
+      <div className="section-label">About Me</div>
+      <h2 className="section-title">The developer behind the code.</h2>
+
       <div className="about-me">
         <div className="about-desc">
           <p className={!aboutdesc ? 'more' : 'moreOn'}>
-            Ifeanyi Oti is a software engineer who specializes
-            in using Javascript, React, Redux, and Rails to build
-            software solutions for small businesses.
+            I'm Ifeanyi Oti — an entrepreneurial Full-Stack Software Developer with 5+ years
+            of experience shipping high-impact products across fintech, Web3, and SaaS. I've
+            maintained a sub-1% bug rate across every production system I've owned, and I
+            pride myself on delivering on time without cutting corners.
 
-            <p>
-              Before entering the tech industry, he honed
-              his problem-solving skills as a fabricator welder. These
-              experiences equipped him with a unique skill set that allows
-              him to bring a practical and hands-on approach to software development.
+            <p style={{ marginTop: '16px' }}>
+              My toolkit spans the full product lifecycle: pixel-perfect React and Next.js
+              frontends, React Native mobile apps for iOS and Android, robust
+              backends, and PostgreSQL/MongoDB databases. I've built crypto-fiat
+              conversion platforms, cross-border payment systems, real-time Web3 dashboards,
+              and worship presentation desktop applications — each one production-grade and
+              built to scale.
             </p>
 
-            <p>
-              As a software engineer with a background in fabricator
-              welding, he brings a unique combination of technical
-              expertise and hands-on experience to any project. His
-              technical skills in software development, paired with his
-              experience solving complex problems in a hands-on
-              environment, allow him to approach software
-              engineering with a practical, solution-oriented mindset.
+            <p style={{ marginTop: '16px' }}>
+              Before tech, I was a fabricator welder — a trade that rewired how I think. I
+              approach software the same way I approached metalwork: measure twice, cut once,
+              and never ship something you wouldn't stand behind. That hands-on mindset
+              shapes every technical decision I make.
             </p>
 
-            <p>
-              He is currently completing coursework at Microverse,
-              Microverse is a remote software development program
-              that uses pair programming and project building to
-              teach development. He has spent the last several
-              months completely immersed in remote development,
-              building everything from landing pages to Rails APIs,
-              and he has learned the important skills of communication
-              and teamwork.
-              He also learned in this experience to resolve conflicts as
-              a person and with the team in a peaceful manner which helped
-              him increase his teamwork skills.
+            <p style={{ marginTop: '16px' }}>
+              I trained at Microverse — an intensive remote full-stack program — where I
+              spent 2,000+ hours building real projects and pair-programming with developers
+              across 6 continents. Communication, collaboration, and conflict resolution under
+              pressure became second nature. I've since mentored junior developers through the
+              same program, and I carry that teaching instinct into every team I join.
             </p>
           </p>
-          <span
-            className="seeMore-desc"
-            onClick={aboutAccordion}
-          >
-            {!aboutdesc ? 'see more' : 'see less'}
+
+          <span className="seeMore-desc" onClick={aboutAccordion}>
+            {!aboutdesc ? '↓ Read more' : '↑ Show less'}
           </span>
-          <p>
-            Tech Stack:
-            <ul>
-              <li>Languages: JavaScript, HTML, CSS, Ruby</li>
-              <li>
-                Frameworks &
-                Libraries: React, Redux, Rails, node.js,
-                Bootstrap, Tailwind
-              </li>
-              <li>Databases: PostgreSQL</li>
-              <li>Management & Deployment: Git, GitHub, Netlify, Postman, Terminal</li>
-              <li>Tools & Methods: RSpec, Jest, TDD, Dev Tools, Gitflow</li>
-            </ul>
-            He's passionate about learning new technologies as well as building things.
-            Always looking for new opportunities.
-            If you'd like to get in contact about
-            potential job opportunities,
-            please reach out via email
-            (otijoseph305@gmail.com).
-          </p>
-        </div>
-        <div>
-          <img className="myself" src={ifeanyi} alt="About me" height={500} width={450} />
+
+          <div className="about-skills">
+            <h3>Core Technologies</h3>
+            {skillGroups.map((group) => (
+              <div key={group.label} style={{ marginBottom: '14px' }}>
+                <div style={{ fontSize: '12px', color: 'var(--accent)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '8px' }}>
+                  {group.label}
+                </div>
+                <ul>
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

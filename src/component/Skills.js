@@ -1,102 +1,65 @@
 import React from 'react';
-import { MdOutlineSend } from 'react-icons/md';
-import Myskills from './Myskills';
-import bootstrap from './images/bootstrap.png';
-import github from './images/github.png';
-import html from './images/html.png';
-import javascript from './images/javascript.png';
-import netlify from './images/netlify.png';
-import react from './images/react.png';
-import redux from './images/redux.png';
-import ruby from './images/ruby.png';
-import rubyOnRails from './images/rubyOnRails.png';
-import sql from './images/sql.png';
-import vscode from './images/vscode.png';
-import webpack from './images/webpack.png';
 
-const Skills = () => {
-  const mySkills = [
-    {
-      name: 'bootstrap',
-      img: bootstrap,
-      id: 1,
-    },
-    {
-      name: 'github',
-      img: github,
-      id: 2,
-    },
-    {
-      name: 'html',
-      img: html,
-      id: 3,
-    },
-    {
-      name: 'javascript',
-      img: javascript,
-      id: 4,
-    },
-    {
-      name: 'netlify',
-      img: netlify,
-      id: 5,
-    },
-    {
-      name: 'react',
-      img: react,
-      id: 7,
-    },
-    {
-      name: 'redux',
-      img: redux,
-      id: 8,
-    },
-    {
-      name: 'ruby',
-      img: ruby,
-      id: 9,
-    },
-    {
-      name: 'rubyOnRails',
-      img: rubyOnRails,
-      id: 10,
-    },
-    {
-      name: 'sql',
-      img: sql,
-      id: 11,
-    },
-    {
-      name: 'vscode',
-      img: vscode,
-      id: 12,
-    },
-    {
-      name: 'webpack',
-      img: webpack,
-      id: 13,
-    },
-  ];
+const skillCategories = [
+  {
+    name: 'Frontend',
+    id: 1,
+    skills: ['JavaScript (ES2022+)', 'TypeScript', 'React', 'Next.js', 'Vue.js', 'Redux', 'Tailwind CSS', 'HTML5', 'CSS3', 'Bootstrap'],
+  },
+  {
+    name: 'Mobile',
+    id: 2,
+    skills: ['React Native', 'Expo', 'iOS Development', 'Android Development'],
+  },
+  {
+    name: 'Backend',
+    id: 3,
+    skills: ['Node.js', 'RESTful APIs', 'Express.js'],
+  },
+  {
+    name: 'Databases',
+    id: 4,
+    skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'Firebase', 'Redis'],
+  },
+  {
+    name: 'Testing',
+    id: 6,
+    skills: ['TDD', 'Jest', 'RSpec', 'Unit Testing', 'Integration Testing'],
+  },
+  {
+    name: 'Tools & DevOps',
+    id: 7,
+    skills: ['Git', 'GitHub', 'Gitflow', 'Webpack', 'Babel', 'npm', 'Postman', 'Netlify', 'Chrome DevTools'],
+  },
+  {
+    name: 'AI & Automation',
+    id: 8,
+    skills: ['AI-assisted development', 'prompt engineering', 'workflow automation', 'integrating AI APIs into applications'],
+  },
+  {
+    name: 'Professional',
+    id: 9,
+    skills: ['Remote Pair Programming', 'Mentoring', 'Technical Leadership', 'Cross-functional Collaboration'],
+  },
+];
 
-  return (
-    <div id="skills">
-      <h1 className="project-title">
-        <MdOutlineSend />
-        <b>My Skills</b>
-      </h1>
-      <div
-        data-aos="fade-up"
-      >
-        <div className="skill-grid">
-          {
-            mySkills.map((skill) => (
-              <Myskills skill={skill} key={skill.id} />
-            ))
-          }
+const Skills = () => (
+  <div id="skills">
+    <div className="section-label">Expertise</div>
+    <h2 className="section-title">My tech stack.</h2>
+    <div className="skills-wrapper">
+      {skillCategories.map((cat) => (
+        <div className="skill-category" key={cat.id} data-aos="fade-up">
+          <div className="skill-category-name">{cat.name}</div>
+          <div className="skill-badges">
+            {cat.skills.map((skill) => (
+              <span className="skill-badge" key={skill}>{skill}</span>
+            ))}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 export default Skills;

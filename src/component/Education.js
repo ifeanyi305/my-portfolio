@@ -1,50 +1,65 @@
 import React from 'react';
-import { MdOutlineSend } from 'react-icons/md';
 
 const Education = () => (
   <div id="education">
-    <h1 className="project-title">
-      <MdOutlineSend />
-      <b>Education</b>
-    </h1>
-    <div className="fold" data-aos="fade-up">
+    <div className="section-label">Education</div>
+    {/* <h2 className="section-title">Where I learned to build.</h2> */}
+
+    <div className="edu-card" data-aos="fade-up">
+      <h2>Microverse</h2>
+      <div className="edu-sub">Remote Full-Stack Software Development</div>
       <p>
-        <b>
-          Spent 1300+ hours mastering algorithms,
-          data structures @
-          <span className="microverse"><a href="https://www.microverse.org/">Microverse</a></span>
-          , and full-stack development
-          while simultaneously developing projects with
-          <a className="color" href="https://en.wikipedia.org/wiki/Ruby_(linguagem_de_programa%C3%A7%C3%A3o)" target="_blank" rel="noreferrer">Ruby</a>
-          ,
-          <a className="color" href="https://en.wikipedia.org/wiki/Ruby_on_Rails" target="_blank" rel="noreferrer">Rails</a>
-          ,
-          <a className="color" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noreferrer">JavaScript</a>
-          ,
-          <a className="color" href="https://en.wikipedia.org/wiki/React_(JavaScript_library)" target="_blank" rel="noreferrer">React</a>
-          , and
-          <a className="color" href="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)" target="_blank" rel="noreferrer">Redux</a>
-          .
-        </b>
+        An intensive, full-time remote software
+        engineering program headquartered in San Francisco, CA —
+        built around pair programming, real project delivery,
+        and cross-timezone collaboration.
       </p>
       <p>
-        <b>
-          Developed skills in remote pair-programming
-          using
-          {' '}
-          <a className="color" href="https://github.com/ifeanyi305" target="_blank" rel="noreferrer">GitHub</a>
-          {' '}
-          industry-standard gitflow,
-          and daily standups to communicate
-          and collaborate with international
-          remote developers.
-        </b>
+        Completed
+        {' '}
+        <strong style={{ color: 'var(--text)', fontWeight: 700 }}>2,000+ hours</strong>
+        {' '}
+        mastering
+        algorithms, data structures, and full-stack development. Shipped production projects
+        with
+        {' '}
+        <a href="https://en.wikipedia.org/wiki/Ruby_on_Rails" target="_blank" rel="noreferrer">Ruby on Rails</a>
+        ,
+        {' '}
+        <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noreferrer">JavaScript</a>
+        ,
+        {' '}
+        <a href="https://en.wikipedia.org/wiki/React_(JavaScript_library)" target="_blank" rel="noreferrer">React</a>
+        ,
+        {' '}
+        <a href="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)" target="_blank" rel="noreferrer">Redux</a>
+        ,
+        {' '}
+        and PostgreSQL.
       </p>
       <p>
-        <b>
-          Built 59+ projects ranging from simple
-          projects to complex full-stack applications.
-        </b>
+        Built
+        {' '}
+        <strong style={{ color: 'var(--text)', fontWeight: 700 }}>59+ projects</strong>
+        {' '}
+        ranging
+        from simple landing pages to complex full-stack applications.
+        Developed industry-standard GitHub
+        workflow, daily standups, and the communication
+        skills to collaborate effectively with developers
+        across 6 continents.
+      </p>
+    </div>
+
+    <div className="edu-card" data-aos="fade-up">
+      <h2>Petroleum Training Institute</h2>
+      <div className="edu-sub">B.Sc. Welding Technology · Dec 2017 – July 2021 · Warri, Nigeria</div>
+      <p>
+        Bachelor&apos;s degree in Welding Technology.
+        This background shaped a problem-solving mindset and
+        hands-on engineering discipline that carries directly
+        into software development — precision,
+        structural thinking, and a bias toward things that actually work.
       </p>
     </div>
   </div>
